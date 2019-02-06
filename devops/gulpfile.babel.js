@@ -57,7 +57,7 @@ const publish = ({ bucket, targetPath = '', region = 'us-east-1' }) => () => {
     region,
   });
   gutil.log(
-    gutil.colors.cyan('[RESA]'),
+    gutil.colors.cyan('[phileapp]'),
     'Publishing to',
     gutil.colors.yellow.bold(targetPath),
   );
