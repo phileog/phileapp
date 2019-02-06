@@ -34,30 +34,39 @@ const getTheme = () => {
   WebFontLoader.load(fonts);
 
   fontFamily = 'Roboto, Helvetica, Arial, sans-serif';
+
+  // const hardWhite = 'rgb(255, 255, 255)';
+  // const mediumWhite = 'rgb(250, 250, 250)';
+  // const lightWhite = 'rgb(245, 245, 245)';
   theme = createMuiTheme({
     // palette: {
     //   primary: {
-    //     light: '#757ce8',
-    //     main: '#3f50b5',
-    //     dark: '#002884',
-    //     contrastText: '#fff',
+    //     // light and dark entries, if not set, will be generated
+    //     main: 'rgb(203, 0, 68)',
+    //     contrastText: mediumWhite,
     //   },
     //   secondary: {
-    //     light: '#ff7961',
-    //     main: '#f44336',
-    //     dark: '#ba000d',
-    //     contrastText: '#000',
+    //     // light and dark entries, if not set, will be generated
+    //     main: 'rgb(62, 61, 64)',
+    //     contrastText: mediumWhite,
     //   },
-    // },
-    // overrides: {
-    //   MuiListItem: {
-    //     root: {
-    //       backgroundColor: 'rgb(255, 255, 255)',
-    //     },
+    //   common: {
+    //     white: mediumWhite,
+    //     black: 'rgb(22, 22, 22)',
+    //     yammerblue: 'rgb(0, 136, 206)',
+    //   },
+    //   background: {
+    //     default: mediumWhite,
+    //     paper: lightWhite,
+    //     sncfgrey: 'rgb(224, 225, 221)',
     //   },
     // },
     typography: { fontFamily, useNextVariants: true },
   });
+  theme.breakpoints.getName = (width, { keys, values } = theme.breakpoints) =>
+    _.findLast(keys, key => values[key] <= width);
+
+  window.MUI_THEME = theme;
 
   return theme;
 };
