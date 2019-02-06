@@ -1,0 +1,20 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-sass-guidelines",
+    "stylelint-config-rational-order"
+  ],
+  "plugins": [
+    "stylelint-scss"
+  ],
+  "rules": {
+    "declaration-colon-newline-after": null,
+    "function-parentheses-newline-inside": null,
+    "indentation": null,
+    "max-nesting-depth": null,
+    "order/properties-alphabetical-order": null,
+    "scss/selector-no-redundant-nesting-selector": null,
+    "selector-no-qualifying-type": null,
+    "selector-max-compound-selectors": null
+  }
+}
